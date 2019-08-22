@@ -6,35 +6,33 @@ export const Container = styled.View`
 
 export const HeaderBackground = styled.ImageBackground`
   flex-direction: row;
-  justify-content: space-between;
-  margin-top: 44px;
+  margin-top: 25px;
   margin-left: 20px;
-  margin-right: 20px;
+`;
+
+export const ButtonBack = styled.Image`
+  margin-right: 10px;
+  height: 15px;
+  width: 15px;
+  margin-top: 5px;
 `;
 
 export const HeaderTitle = styled.Text`
   font-size: 18px;
-  font-weight: bold;
   color: #fff;
   letter-spacing: 0;
+  text-align: left;
 `;
 
-export const HeaderRelogio = styled.Image`
-  height: 20px;
-  width: 20px;
-`;
-
-export const Content = styled.TouchableOpacity.attrs({
-  activeOpacity: 0.9
-})`
+export const Content = styled.View`
   flex-direction: row;
   width: 90%;
-  background-color: #fff;
   margin-left: 20px;
+  border-radius: 8px;
+  background-color: #fff;
   border-width: 1px;
   border-bottom-width: 0;
-  box-shadow: 5px 10px 5px #ccc;
-  border-radius: 8px;
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.5);
   padding: 15px;
   margin-top: 25px;
 `;
@@ -53,7 +51,7 @@ export const Title = styled.Text`
   text-align: left;
 `;
 
-export const Description = styled.Text`
+export const DiaPedido = styled.Text`
   font-size: 11px;
   color: #706e7b;
   letter-spacing: 0;
@@ -61,15 +59,10 @@ export const Description = styled.Text`
   text-align: left;
 `;
 
-export const ImageTemp = styled.Image`
-  width: 15px;
-  height: 15px;
-  margin-right: 8px;
-`;
-
 export const Texto = styled.Text`
-  font-size: 10px;
-  color: #706e7b;
-  letter-spacing: 0.46px;
+  font-size: 16px;
+  color: #0b2031;
+  letter-spacing: 0;
   text-align: left;
+  font-weight: bold;
 `;

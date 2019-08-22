@@ -47,7 +47,7 @@ class SignIn extends Component {
           />
           <TouchableOpacity
             style={styles.buttonEntrar}
-            onPress={() => {}}
+            onPress={() => this.props.navigation.navigate("Main")}
             activeOpacity={0.8}
           >
             <Text style={styles.buttonEntrarText}>Entrar</Text>

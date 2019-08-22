@@ -1,19 +1,46 @@
 import React from "react";
-import { Text, Image, ImageBackground, View } from "react-native";
+import {
+  ScrollView,
+  Image,
+  ImageBackground,
+  View,
+  TouchableOpacity
+} from "react-native";
 
 import header from "../../assets/img/header.png";
 import relogio from "../../assets/img/relogio.png";
 import sacola from "../../assets/img/sacola.png";
+import pizza from "../../assets/img/pizza.png";
+import massa from "../../assets/img/massa.png";
+import refri from "../../assets/img/refri.png";
+import calzones from "../../assets/img/calzones.png";
+import alcool from "../../assets/img/alcool.png";
 
-import styles from "./style";
+import {
+  Container,
+  HeaderBackground,
+  HeaderTitle,
+  HeaderRelogio,
+  Content,
+  ImageProduto,
+  Title,
+  Description,
+  ImageTemp,
+  Texto
+} from "./style";
 
-const Main = () => (
-  <View style={styles.container}>
+const Main = ({ navigation }) => (
+  <Container>
     <ImageBackground source={header} style={{ height: 180 }}>
-      <View style={styles.headerContainer}>
-        <Image style={styles.relogio} source={relogio} />
-        <Text style={styles.headerTitle}>Pizzaria Don Juan</Text>
-        <View
+      <HeaderBackground>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Historico")}
+          activeOpacity={0.8}
+        >
+          <HeaderRelogio source={relogio} />
+        </TouchableOpacity>
+        <HeaderTitle>Pizzaria Don Juan</HeaderTitle>
+        <TouchableOpacity
           style={{
             width: 40,
             height: 40,
@@ -22,12 +49,79 @@ const Main = () => (
             alignItems: "center",
             borderRadius: 20
           }}
+          activeOpacity={0.8}
+          onPress={() => navigation.navigate("Carrinho")}
         >
-          <Image style={styles.sacola} source={sacola} />
+          <Image source={sacola} />
+        </TouchableOpacity>
+      </HeaderBackground>
+      <Content onPress={() => navigation.navigate("Sabor")}>
+        <ImageProduto source={pizza} />
+        <View style={{ flex: 1, justifyContent: "center" }}>
+          <Title>Pizzas</Title>
+          <Description>
+            Mais de 50 sabores de pizza em até 4 tamanhos diferentes de fome
+          </Description>
+          <View style={{ flexDirection: "row", marginTop: 15 }}>
+            <ImageTemp source={relogio} />
+            <Texto>30 mins</Texto>
+          </View>
         </View>
-      </View>
+      </Content>
+      <Content>
+        <ImageProduto source={massa} />
+        <View style={{ flex: 1, justifyContent: "center" }}>
+          <Title>Pizzas</Title>
+          <Description>
+            Mais de 50 sabores de pizza em até 4 tamanhos diferentes de fome
+          </Description>
+          <View style={{ flexDirection: "row", marginTop: 15 }}>
+            <ImageTemp source={relogio} />
+            <Texto>30 mins</Texto>
+          </View>
+        </View>
+      </Content>
+      <Content>
+        <ImageProduto source={calzones} />
+        <View style={{ flex: 1, justifyContent: "center" }}>
+          <Title>Pizzas</Title>
+          <Description>
+            Mais de 50 sabores de pizza em até 4 tamanhos diferentes de fome
+          </Description>
+          <View style={{ flexDirection: "row", marginTop: 15 }}>
+            <ImageTemp source={relogio} />
+            <Texto>30 mins</Texto>
+          </View>
+        </View>
+      </Content>
+      <Content>
+        <ImageProduto source={refri} />
+        <View style={{ flex: 1, justifyContent: "center" }}>
+          <Title>Pizzas</Title>
+          <Description>
+            Mais de 50 sabores de pizza em até 4 tamanhos diferentes de fome
+          </Description>
+          <View style={{ flexDirection: "row", marginTop: 15 }}>
+            <ImageTemp source={relogio} />
+            <Texto>30 mins</Texto>
+          </View>
+        </View>
+      </Content>
+      <Content>
+        <ImageProduto source={alcool} />
+        <View style={{ flex: 1, justifyContent: "center" }}>
+          <Title>Pizzas</Title>
+          <Description>
+            Mais de 50 sabores de pizza em até 4 tamanhos diferentes de fome
+          </Description>
+          <View style={{ flexDirection: "row", marginTop: 15 }}>
+            <ImageTemp source={relogio} />
+            <Texto>30 mins</Texto>
+          </View>
+        </View>
+      </Content>
     </ImageBackground>
-  </View>
+  </Container>
 );
 
 Main.navigationOptions = {
